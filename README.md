@@ -7,28 +7,26 @@
 
 Official repository for our solution to the **[ICPR 2026 Competition on Low-Resolution License Plate Recognition (LR-LPR)](https://codalab.lisn.upsaclay.fr/)**.
 
-This competition challenges participants to recognize license plates from heavily degraded, low-resolution dashcam footage — a problem where even state-of-the-art methods struggle to exceed **50–60% accuracy**. Our pipeline combines a Vision Transformer (SVTR) backbone with **Factorized Temporal Attention** to mathematically isolate and filter inter-frame motion blur before spatial decoding.
-
+This competition challenges participants to recognize license plates from heavily degraded, low-resolution dashcam footage — a problem where even state-of-the-art methods struggle to exceed **50–60% accuracy**. Our pipeline ensembles 4 models including Restrans, Mamba, and 2 SVTR variants.
 ---
 
 ## 👥 Team Members
 
-* **Hoang Minh Giang Nguyen (Fluuvys)** - *Hanoi University of Science and Technology (HUST)*
-* **Trong Thai Doan** - *Hanoi University of Science and Technology (HUST)*
-* **Dinh Quang Trinh** - *Hanoi University of Science and Technology (HUST)*
-* **Tuan Anh Duong** - *Hanoi University of Science and Technology (HUST)*
+* **Hoang Minh Giang Nguyen (Fluuvys)** — *Hanoi University of Science and Technology (HUST)*
+* **Trong Thai Doan** — *Hanoi University of Science and Technology (HUST)*
+* **Dinh Quang Trinh** — *Hanoi University of Science and Technology (HUST)*
+* **Tuan Anh Duong** — *Hanoi University of Science and Technology (HUST)*
 
 ---
 
 ## 🏆 Competition Results
 
-![Team Results Placeholder](https://via.placeholder.com/800x400.png?text=Upload+your+Leaderboard+or+Accuracy+Graph+Here)
-*(Replace with your actual results image, e.g., `docs/results.png`)*
+![Leaderboard Results](Screenshot%202026-03-04%20at%2009.11.27.png)
 
 | Metric | Score |
 |--------|-------|
 | **Best Single Model — Test Acc** | `74.00%` (Factorized SVTR 256-Ch) |
-| **Ensemble — Test Acc** | `79.23%+` |
+| **Ensemble — Test Acc** | `79.23%` |
 
 ---
 
@@ -78,11 +76,9 @@ Each line: `track_id,plate_text;confidence`
 ## 📂 Repository Structure
 
 ```text
-ICPR_2026_FINAL_SOLUTION/
+ICPR_2026_LRPR_Competition/
 ├── configs/               # Global configuration and hyperparameter files
 ├── data/                  # Placeholder for train/val/test datasets
-├── docs/                  # Documentation images and assets
-├── results/               # Saved logs, .pth weights, and submission .txt files
 ├── src/
 │   ├── data/              # Dataloaders, multi-frame padding, and augmentations
 │   ├── models/            # SVTR, ResTran, Mamba, and Factorized Fusion blocks
@@ -90,7 +86,6 @@ ICPR_2026_FINAL_SOLUTION/
 │   └── utils/             # CTC decoding and metric calculation
 ├── ensemble.py            # Logit aggregation and Beam Search decoding script
 ├── inference.py           # Standalone script for Codabench submission generation
-├── thai_model.ipynb       # Exploratory analysis / alternative architectures
 └── train.py               # Main training entry point
 ```
 
@@ -116,18 +111,7 @@ pip install numpy opencv-python albumentations tqdm
 
 > ⚠️ Dataset access requires signing a license agreement and registering on Codabench with an institutional email. See the [competition page](https://codalab.lisn.upsaclay.fr/) for instructions.
 
-Place the competition data inside the `data/` directory. The blind test set path must match the value in `configs/config.py` (e.g., `data/TKzFBtn7-test-blind`).
-
----
-
-## 🧠 Model Zoo & Weights
-
-Pre-trained weights are available on the [Releases](https://github.com/Fluuvys/ICPR_2026_LRPR_Competition/releases) page. Download `.pth` files and place them in `results/`.
-
-| Model Architecture | Params | Validation Acc | Download |
-|---|---|---|---|
-| **Factorized SVTR (256-Ch)** | ~X.X M | **77.31%** | [Release v1.0 (Coming Soon)](#) |
-| ResTran (Baseline) | ~X.X M | 75.75% | [Release v1.0 (Coming Soon)](#) |
+Place the competition data inside the `data/` directory. The blind test set path must match the value in `configs/config.py`.
 
 ---
 
