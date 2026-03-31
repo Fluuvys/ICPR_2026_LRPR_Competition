@@ -12,7 +12,7 @@ This competition challenges participants to recognize license plates from heavil
 
 ## 👥 Team Members
 
-* **Hoang Minh Giang Nguyen (Fluuvys)** — *Hanoi University of Science and Technology (HUST)*
+* **Hoang Minh Giang Nguyen** — *Hanoi University of Science and Technology (HUST)*
 * **Trong Thai Doan** — *Hanoi University of Science and Technology (HUST)*
 * **Dinh Quang Trinh** — *Hanoi University of Science and Technology (HUST)*
 * **Tuan Anh Duong** — *Hanoi University of Science and Technology (HUST)*
