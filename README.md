@@ -16,6 +16,7 @@ This competition challenges participants to recognize license plates from heavil
 * **Trong Thai Doan** — *Hanoi University of Science and Technology (HUST)*
 * **Dinh Quang Trinh** — *Hanoi University of Science and Technology (HUST)*
 * **Tuan Anh Duong** — *Hanoi University of Science and Technology (HUST)*
+* **Tuan Anh Vu** — *Hanoi University of Science and Technology (HUST)*
 
 ---
 
